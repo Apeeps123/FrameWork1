@@ -11,6 +11,9 @@ var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var kategoriRouter = require('./routes/kategori');
+var mhsRouter = require('./routes/mahasiswa');
+var skillRouter = require('./routes/keahlian');
+var penRouter = require('./routes/pendidikan');
 
 
 var app = express();
@@ -40,6 +43,9 @@ app.use(flash())
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/kategori', kategoriRouter);
+app.use('/mahasiswa',mhsRouter);
+app.use('/keahlian',skillRouter);
+app.use('/pendidikan',penRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
